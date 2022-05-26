@@ -6,7 +6,7 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     
-    [SerializeField] float runspeed = 10f;
+    [SerializeField] float runSpeed = 10f;
     [SerializeField] GameObject bulletPrefab;
     public TextMeshProUGUI collectedText;
     public static int collectedAmount = 0;
@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if(!isAlive) { return; }
+        fireDelay = GameController.FireRate;
+        runSpeed = GameController.MoveSpeed;
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
@@ -37,7 +39,7 @@ public class PlayerController : MonoBehaviour
             lastFire = Time.time;
         }
 
-        myRigidbody.velocity = new Vector2(horizontal * runspeed, vertical * runspeed);
+        myRigidbody.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
         collectedText.SetText($"Items collected: " + collectedAmount);
     }
 
