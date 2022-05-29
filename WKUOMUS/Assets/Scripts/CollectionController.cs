@@ -36,6 +36,7 @@ public class CollectionController : MonoBehaviour
             GameController.MoveSpeedChange(moveSpeedChange);
             GameController.AttackRateChange(attackSpeedChange);
             GameController.BulletSizeChange(bulletSizeChange);
+            //GameController.instance.UpdateCollectedItems(this);  //this is for item combinations(I'm not using it)
             gameObject.SetActive(false);
             Destroy(gameObject);
         }

@@ -13,6 +13,13 @@ public class GameController : MonoBehaviour
     private static float fireRate = 0.5f;
     private static float bulletSize = 0.5f;
 
+    /* for combination power ups
+    private bool bootCollected = false;
+    private bool nerfGunCollected = false;
+    
+    public List<string> collectedNames = new List<string>(); 
+    */
+
     public static float Health { get => health; set => health = value; }
     public static float MaxHealth { get => maxHealth; set => maxHealth = value; }
     public static float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
@@ -69,6 +76,31 @@ public class GameController : MonoBehaviour
     {
         bulletSize += size;
     }
+
+    /* for combination power ups
+    public void UpdateCollectedItems(CollectionController item)
+    {
+        collectedNames.Add(item.item.name);
+
+        foreach(string i in collectedNames)
+        {
+            switch(i)
+            {
+                case "Boot":
+                    bootCollected = true;
+                break;
+                case "Nerf Gun":
+                    nerfGunCollected = true;
+                break;
+            }
+        }
+
+        if(bootCollected && nerfGunCollected)
+        {
+            AttackRateChange(0.25f);
+        }
+    }
+    */
 
     private static void KillPlayer()
     {
