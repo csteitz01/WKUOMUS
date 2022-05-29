@@ -48,3 +48,6 @@ TagManager:
   - name: Door
     uniqueID: 899095061
     locked: 0
+  - name: Wall
+    uniqueID: 3536946159
+    locked: 0

@@ -41,11 +41,12 @@ public class GameController : MonoBehaviour
         healthText.text = health.ToString();    
     }
 
-    // Update is called once per frame
+    /*
     void Update()
     {
         healthText.SetText($"Health: " + health);
     }
+    */
 
     public static void DamagePlayer(int damage)
     {
