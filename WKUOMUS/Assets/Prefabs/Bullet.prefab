@@ -96,7 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb7959be7f4d2654eb23da66ce5e64c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 8832545487938121636, guid: 5719409e5ba687a4780bdcc6d84b1e89, type: 3}
   lifeTime: 2
+  isEnemyBullet: 0
 --- !u!61 &8072438646431787990
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -61,7 +61,7 @@ public class GameController : MonoBehaviour
         if(Health <= 0)
         {
             Restart();
-            Health = 6;
+            Health = maxHealth;
         }
     }
 

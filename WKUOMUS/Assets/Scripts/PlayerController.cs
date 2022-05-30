@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         }
 
         myRigidbody.velocity = new Vector2(horizontal * runSpeed, vertical * runSpeed);
-        collectedText.SetText($"Items collected: " + collectedAmount);
+        //collectedText.SetText($"Items collected: " + collectedAmount); not being used currently
     }
 
     void Shoot(float x, float y)

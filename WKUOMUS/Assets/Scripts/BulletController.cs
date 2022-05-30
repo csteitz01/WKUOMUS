@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    EnemyController enemyController;
+    public GameObject boss;
     [SerializeField] float lifeTime;
     public bool isEnemyBullet = false;
     private Vector2 lastPos;
     private Vector2 currentPos;
     private Vector2 playerPos;
     bool wasShot = false;
+    int waitTime = 2;
 
     void Start()
     {
         StartCoroutine(DeathDelay());
+        StartCoroutine(LateStart());
         if(!isEnemyBullet)
         {
             transform.localScale = new Vector2(GameController.BulletSize, GameController.BulletSize);
         }
+        
     }
+
+    IEnumerator LateStart()
+     {
+         yield return new WaitForSeconds(waitTime);
+         enemyController = boss.GetComponent<EnemyController>();
+     }
     
     void Update()
     {
@@ -51,6 +62,16 @@ public class BulletController : MonoBehaviour
         {
             col.gameObject.GetComponent<EnemyController>().Death();
             Destroy(gameObject);
+        }
+
+        if(col.tag == "Boss" && !isEnemyBullet)
+        {
+            enemyController.BossHealth -= 1;
+            Destroy(gameObject);
+            if(enemyController.BossHealth <= 0)
+            {
+                col.gameObject.GetComponent<EnemyController>().Death();
+            }
         }
 
         if(col.tag == "Player" && isEnemyBullet && !wasShot)
