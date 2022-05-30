@@ -14,8 +14,8 @@ public enum EnemyState
 public enum EnemyType
 {
     Melee,
-    Ranged,
-    Boss
+    Ranged
+    //Boss
 };
 
 public class EnemyController : MonoBehaviour
@@ -29,12 +29,12 @@ public class EnemyController : MonoBehaviour
     [SerializeField] float attackRange;
     [SerializeField] float cooldown;
     private bool chooseDir = false;
-    private bool dead = false;
+    //private bool dead = false;
     private bool cooldownAttack = false;
     public bool notInRoom = false;
     private Vector3 randomDir;
     public GameObject bulletPrefab;
-    public int BossHealth = 50;
+    //public int BossHealth = 50;
 
     void Start()
     {
@@ -134,13 +134,13 @@ public class EnemyController : MonoBehaviour
                     bullet.GetComponent<BulletController>().isEnemyBullet = true;
                     StartCoroutine(Cooldown());
                 break;
-                case(EnemyType.Boss):
-                    GameObject bossBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
-                    bossBullet.GetComponent<BulletController>().GetPlayer(player.transform);
-                    bossBullet.AddComponent<Rigidbody2D>().gravityScale = 0;
-                    bossBullet.GetComponent<BulletController>().isEnemyBullet = true;
-                    StartCoroutine(Cooldown());
-                break;
+                // case(EnemyType.Boss):
+                //     GameObject bossBullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+                //     bossBullet.GetComponent<BulletController>().GetPlayer(player.transform);
+                //     bossBullet.AddComponent<Rigidbody2D>().gravityScale = 0;
+                //     bossBullet.GetComponent<BulletController>().isEnemyBullet = true;
+                //     StartCoroutine(Cooldown());
+                // break;
             }
         }
     }
