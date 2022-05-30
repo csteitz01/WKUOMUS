@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float fireDelay;
     Rigidbody2D myRigidbody;
 
-    bool isAlive = true;
+    public bool isAlive = true;
 
     void Start()
     {

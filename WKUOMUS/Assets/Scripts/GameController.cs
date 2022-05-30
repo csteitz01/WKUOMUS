@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-
+    public static int Respawn = 0;
     public static GameController instance;
     private static float health = 6;
     private static float maxHealth = 6;
@@ -48,13 +49,19 @@ public class GameController : MonoBehaviour
     }
     */
 
+    public static void Restart()
+    {
+        SceneManager.LoadScene(Respawn);
+    }
+
     public static void DamagePlayer(int damage)
     {
         Health -= damage;
 
         if(Health <= 0)
         {
-            KillPlayer();
+            Restart();
+            Health = 6;
         }
     }
 
@@ -102,9 +109,4 @@ public class GameController : MonoBehaviour
         }
     }
     */
-
-    private static void KillPlayer()
-    {
-
-    }
 }
