@@ -124,7 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currState: 0
   enemyType: 1
-  range: 8
+  range: 9
   speed: 2
   attackRange: 4
   cooldown: 0.5
