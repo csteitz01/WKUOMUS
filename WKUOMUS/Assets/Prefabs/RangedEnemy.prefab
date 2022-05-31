@@ -124,9 +124,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currState: 0
   enemyType: 1
-  range: 6
+  range: 8
   speed: 2
-  attackRange: 6
+  attackRange: 4
   cooldown: 0.5
   notInRoom: 0
   bulletPrefab: {fileID: 4450449761521690798, guid: d0269a36f3323be40a616a1ca0d905cc, type: 3}
